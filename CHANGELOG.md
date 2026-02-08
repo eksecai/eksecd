@@ -1,3 +1,20 @@
+## [v0.0.66] - 2026-02-08
+
+### Changes
+
+- Replace OpenCode rules with AGENTS.md approach ([#149](https://github.com/eksecai/eksecd/pull/149))
+  - OpenCode now reads rules from a single `~/.config/opencode/AGENTS.md` file instead of `opencode.json` with glob patterns
+  - Rules are rendered with `# Rules` header, `## <title>` sections with descriptions and body content
+  - Front matter (title, description) is extracted and stripped from rule files
+  - Adds `ReadRuleBody()` function that returns title, description, and body
+  - Cleans up old `opencode.json` and `rules/` directory artifacts from previous approach
+
+### Bugfixes
+
+- Fix: recover valid responses when CLI crashes without result event ([#150](https://github.com/eksecai/eksecd/pull/150))
+  - Recovers valid Claude responses when CLI exits non-zero but produced valid assistant messages without a final result JSON event
+  - Prevents intermittent "failed to continue Claude session" errors where valid responses were being discarded
+
 ## [v0.0.65] - 2026-02-07
 
 ### Changes
