@@ -1,3 +1,9 @@
+## [v0.0.67] - 2026-02-08
+
+### Changes
+
+- Update and trim system prompt copy ([#151](https://github.com/eksecai/eksecd/pull/151))
+
 ## [v0.0.66] - 2026-02-08
 
 ### Changes
